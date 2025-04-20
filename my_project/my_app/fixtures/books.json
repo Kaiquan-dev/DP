@@ -1,0 +1,46 @@
+[    
+    {        
+        "model": "my_app.Book",        
+        "pk": 1,        
+        "fields": {            
+            "book_title": "The Great Gatsby",            
+            "book_pages": 180        
+            }    
+    },    
+            
+     {        
+        "model": "my_app.Book",        
+        "pk": 2,        
+        "fields": {            
+            "book_title": "1984",            
+            "book_pages": 328        
+            }    
+    },    
+    
+    {        
+        "model": "my_app.Book",        
+        "pk": 3,        
+        "fields": {            
+            "book_title": "To Kill a Mockingbird",            
+            "book_pages": 281        
+            }    
+    },    
+    
+    {        
+        "model": "my_app.Book",        
+        "pk": 4,        
+        "fields": {            
+            "book_title": "Pride and Prejudice",            
+            "book_pages": 279        
+            }    
+    },    
+    
+    {        
+        "model": "my_app.Book",        
+        "pk": 5,        
+        "fields": {            
+            "book_title": "Moby Dick",            
+            "book_pages": 635        
+            }    
+    }
+]
