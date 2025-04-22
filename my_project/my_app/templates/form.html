@@ -11,24 +11,17 @@
     <div class="main">
         <h1>GeeksforGeeks</h1>
         <h3>Enter your login credentials</h3>
-        {% csrf_token %}
-        <form action="">
-            <label for="first">
-                Username:
-            </label>
-            <input type="text" id="first" name="first" 
-                placeholder="Enter your Username" required>
+        
+        <form method="post" action="current_user/">
+            {% csrf_token %}
+            <label for="first">Email:</label>
+            <input type="text" name="user_current_email" placeholder="Enter your Email" required>
 
-            <label for="password">
-                Password:
-            </label>
-            <input type="password" id="password" name="password" 
-                placeholder="Enter your Password" required>
+            <label for="password">Password:</label>
+            <input type="password" name="user_current_password" placeholder="Enter your Password" required>
 
             <div class="wrap">
-                <button type="submit">  
-                    Submit
-                </button>
+                <button type="submit">Submit</button>
             </div>
         </form>
         

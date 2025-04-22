@@ -24,9 +24,10 @@ from my_app.views import form_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index_page),
-    path('current_user/<int:id>', current_user),
-    path('list_books/', list_books),
-    path('list_users/', list_users),
-    path('form/', form_page),
+    path('', index_page, name='index'),
+    path('current_user/<int:id>/', current_user, name='current_user'),
+    path('list_books/', list_books, name='list_books'),
+    path('list_users/', list_users, name='list_users'),
+    path('form/', form_page, name='form'),
+    path('form/current_user/', current_user, name='form_current_user'),
 ]

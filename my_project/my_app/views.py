@@ -4,6 +4,7 @@ from my_app.models import User
 from my_app.models import Book
 from datetime import date
 
+
 def index_page(request):
     return render(request, 'index.html')
 
@@ -15,7 +16,7 @@ def list_books(request):
     all_books = Book.objects.all()
     return render(request, 'list_books.html', locals())
 
-def current_user(request, id):
+def current_user_age(request, id):
     current_user = User.objects.get(id=id)
     
     age = (date.today() - current_user.birthdate).days // 365
@@ -24,8 +25,20 @@ def current_user(request, id):
 def form_page(request):
     return render(request, 'form.html')
 
-# def postuser(request):
-    # получаем из данных запроса POST отправленные через форму данные
-    name = request.POST.get("name", "Undefined")
-    age = request.POST.get("age", 1)
-    return HttpResponse(f"<h2>Name: {name}  Age: {age}</h2>")
+def current_user(request):
+    if request.method == 'POST':
+        user_current_email = request.POST.get("user_current_email")
+        user_current_password = request.POST.get("user_current_password")
+        
+        try:
+            user = User.objects.all()
+            if user.user_password == user_current_password:
+                return HttpResponse(f"<h2>Name: {user.name} Surname: {user.surname}</h2>")
+            else:
+                return HttpResponse('Неправильно: неверный пароль')
+            
+        except User.DoesNotExist:
+            return HttpResponse('Неправильно: пользователь не найден')
+        
+    return HttpResponse('Метод не поддерживается. Используйте POST.')
+    
