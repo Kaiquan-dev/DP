@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Список пользователей</h1>
+        <div>
+            <table>
+                {% for i in all_users %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.user_name }}</td>
+                    <td>{{ i.user_surname }}</td>
+                    <td>{{ i.user_date_of_birth }}</td>
+                    <td>{{ i.user_email }}</td>
+                    <td>{{ i.user_password }}</td>
+                    
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+</body>
+</html>

@@ -17,8 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from my_app.views import index_page
+from my_app.views import current_user
+from my_app.views import list_books
+from my_app.views import list_users
+from my_app.views import form_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index_page)
+    path('', index_page),
+    path('current_user/<int:id>', current_user),
+    path('list_books/', list_books),
+    path('list_users/', list_users),
+    path('form/', form_page),
 ]
