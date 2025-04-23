@@ -31,9 +31,9 @@ def current_user(request):
         user_current_password = request.POST.get("user_current_password")
         
         try:
-            user = User.objects.all()
+            user = User.objects.get(user_email=user_current_email)
             if user.user_password == user_current_password:
-                return HttpResponse(f"<h2>Name: {user.name} Surname: {user.surname}</h2>")
+                return HttpResponse(f"<h2>Name: {user.user_name} Surname: {user.user_surname}</h2>")
             else:
                 return HttpResponse('Неправильно: неверный пароль')
             
